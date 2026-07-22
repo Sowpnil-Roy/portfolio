@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sowpnil Roy — Applied ML &amp; IoT Researcher</title>
+<meta name="description" content="Sowpnil Roy — Computer Science graduate (AUST), applied ML &amp; IoT researcher, software engineer, and UI/UX designer. IEEE publications, projects, and more.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFC000'/%3E%3Ctext x='32' y='46' font-family='Arial,sans-serif' font-weight='700' font-size='34' fill='%23101828' text-anchor='middle'%3ESR%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --brand-yellow:#FFC000;--brand-yellow-hover:#FFAB00;--brand-yellow-200:#FFD966;--brand-yellow-300:#FFE699;
+    --font-primary:'Hind Siliguri','Noto Sans Bengali',system-ui,sans-serif;
+    --font-display:'Anton','Impact',sans-serif;
+    --font-ui:'Inter',system-ui,-apple-system,sans-serif;
+  }
+  html,body{margin:0;padding:0}
+  body{font-family:var(--font-primary);background:#fff}
+  a{text-decoration:none}
+  .site{
+    --page:#fff;--surface:#fff;--surface-2:#FFFBEE;--surface-3:#FFF6D9;
+    --text:#101828;--text-2:#475467;--text-3:#667085;--text-4:#98A2B3;
+    --bd:#EAECF0;--bd-2:#D0D5DD;--nav:rgba(255,255,255,.8);
+    --shadow:0 1px 2px rgba(16,24,40,.05);--shadow-lg:0 14px 34px rgba(16,24,40,.10);
+    background:var(--page);color:var(--text);min-height:100vh;position:relative;overflow-x:hidden;
+    transition:background .35s ease,color .35s ease;
+  }
+  .site[data-theme="dark"]{
+    --page:#14120B;--surface:#1E1B12;--surface-2:#262215;--surface-3:#2E2916;
+    --text:#F6F1E4;--text-2:#C8C0AC;--text-3:#A39B86;--text-4:#7C755F;
+    --bd:#322D1C;--bd-2:#45402C;--nav:rgba(20,18,11,.82);
+    --shadow:0 1px 2px rgba(0,0,0,.4);--shadow-lg:0 14px 34px rgba(0,0,0,.55);
+  }
+  ::selection{background:var(--brand-yellow);color:#101828}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.is-in{opacity:1;transform:none}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+  @keyframes livepulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  .ilink{transition:.18s}
+  .ilink:hover{color:var(--brand-yellow)!important;border-color:var(--brand-yellow)!important;transform:translateY(-2px)}
+  .pcard{transition:.2s}
+  .pcard:hover{border-color:var(--brand-yellow-200)!important;box-shadow:var(--shadow-lg)!important;transform:translateY(-3px)}
+  .cvbtn:hover{background:var(--brand-yellow-hover)!important}
+  .navbtn{background:transparent;border:0;font-family:var(--font-primary);font-weight:700;font-size:14px;cursor:pointer;padding:8px 18px;border-radius:999px;transition:.15s;color:var(--text-3)}
+  .navbtn.active{background:var(--brand-yellow);color:#101828}
+  .chip{padding:7px 14px;border-radius:999px;font-family:var(--font-primary);font-weight:600;font-size:13px;cursor:pointer;transition:.15s;border:1px solid var(--bd-2);background:var(--surface);color:var(--text-2)}
+  .chip.active{border-color:var(--brand-yellow);background:var(--brand-yellow);color:#101828}
+  .page{display:none}
+  .page.active{display:block}
+  .eyebrow{font-family:var(--font-ui);font-weight:600;font-size:12px;color:var(--brand-yellow-hover);letter-spacing:.14em;margin-bottom:8px}
+  .h2d{font-family:var(--font-display);font-size:38px;color:var(--text);letter-spacing:.4px}
+
+  @media (max-width:760px){
+    .hero-name{font-size:56px!important}
+    .edu-grid{grid-template-columns:1fr!important}
+    .stats-row{flex-wrap:wrap}
+    .stats-row>div{flex:1 0 45%!important;border-right:0!important;padding:14px 0}
+    .pub-card{grid-template-columns:1fr!important}
+    .pub-tile{min-height:96px!important}
+  }
+</style>
+</head>
+<body>
+<div class="site" id="site" data-theme="light">
+
+  <!-- ===== NAV ===== -->
+  <nav style="position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:var(--nav);border-bottom:1px solid var(--bd)">
+    <div style="max-width:960px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:center;gap:12px">
+      <div style="display:flex;gap:4px;background:var(--surface-2);border:1px solid var(--bd);border-radius:999px;padding:5px">
+        <button class="navbtn active" data-page="home">Home</button>
+        <button class="navbtn" data-page="publications">Publications</button>
+        <button class="navbtn" data-page="showcase">Showcase</button>
+      </div>
+      <button id="themeToggle" title="Toggle theme" style="width:40px;height:40px;flex:none;border-radius:999px;border:1px solid var(--bd-2);background:var(--surface);color:var(--text-2);cursor:pointer;display:grid;place-items:center;font-size:17px"><i class="ri-moon-line"></i></button>
+    </div>
+  </nav>
+
+  <!-- ===== HOME ===== -->
+  <div class="page active" id="page-home">
+    <!-- HERO -->
+    <header style="position:relative;overflow:hidden">
+      <div style="position:absolute;top:-140px;left:50%;margin-left:-260px;width:520px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,192,0,.22),transparent 70%);animation:floaty 10s ease-in-out infinite;pointer-events:none"></div>
+      <div style="max-width:760px;margin:0 auto;padding:64px 24px 44px;position:relative;display:flex;flex-direction:column;align-items:center;text-align:center">
+        <div style="display:inline-flex;align-items:center;gap:8px;background:var(--surface-2);border:1px solid var(--brand-yellow-200);color:var(--brand-yellow-hover);font-weight:600;font-size:12.5px;padding:6px 14px;border-radius:999px">
+          <span style="width:8px;height:8px;border-radius:50%;background:#32D583;animation:livepulse 1.8s ease-in-out infinite"></span>
+          Open to MS / PhD &amp; research collaborations
+        </div>
+        <div style="width:150px;height:150px;border-radius:50%;margin:30px 0 26px;padding:5px;background:linear-gradient(135deg,var(--brand-yellow),var(--brand-yellow-200));box-shadow:0 12px 30px rgba(255,192,0,.35)">
+          <div style="width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--surface-3)">
+            <img src="assets/profile.jpg" alt="Sowpnil Roy" style="width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+        </div>
+        <div class="hero-name" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:74px;line-height:.92;color:var(--text);letter-spacing:-.03em">Sowpnil</div>
+        <div class="hero-name" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:74px;line-height:.92;color:var(--text);letter-spacing:-.03em;position:relative;display:inline-block">Roy<span style="position:absolute;left:-6px;right:-6px;bottom:8px;height:20px;background:var(--brand-yellow);z-index:-1;opacity:.65;transform:rotate(-1.5deg)"></span></div>
+        <p style="font-family:var(--font-primary);font-weight:600;font-size:17px;color:var(--text-2);margin:22px 0 8px">Applied ML &amp; IoT Researcher · Software Engineer · UI/UX Designer</p>
+        <p style="font-weight:500;font-size:15px;line-height:1.6;color:var(--text-3);margin:0 0 26px;max-width:540px">Operational Executive at Ostad and CSE graduate from AUST. Published in IEEE on sensor-efficient exercise monitoring and ML + IoT for sustainable agriculture, with a thesis on neural networks for gene&ndash;disease association mining.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center">
+          <a class="cvbtn" href="assets/Sowpnil_Roy_CV.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:var(--brand-yellow);color:#101828;font-weight:700;font-size:14px;padding:12px 22px;border-radius:8px;box-shadow:0 4px 12px rgba(255,192,0,.35)"><i class="ri-file-text-line"></i> Curriculum Vitae</a>
+          <a href="mailto:sowpnilroy44@gmail.com" style="display:inline-flex;align-items:center;gap:8px;background:var(--surface);color:var(--text);font-weight:700;font-size:14px;padding:12px 22px;border-radius:8px;border:1px solid var(--bd-2)"><i class="ri-mail-line"></i> Contact</a>
+        </div>
+        <div style="display:flex;gap:9px;margin-top:16px">
+          <a class="ilink" href="https://github.com/Sowpnil-Roy" target="_blank" rel="noopener" title="GitHub" style="width:42px;height:42px;border-radius:10px;border:1px solid var(--bd-2);background:var(--surface);color:var(--text-2);display:grid;place-items:center;font-size:19px"><i class="ri-github-fill"></i></a>
+          <a class="ilink" href="https://www.linkedin.com/in/sowpnil--roy/" target="_blank" rel="noopener" title="LinkedIn" style="width:42px;height:42px;border-radius:10px;border:1px solid var(--bd-2);background:var(--surface);color:var(--text-2);display:grid;place-items:center;font-size:19px"><i class="ri-linkedin-box-fill"></i></a>
+          <a class="ilink" href="https://ieeexplore.ieee.org/author/181666130628577" target="_blank" rel="noopener" title="IEEE Xplore Author Profile" style="width:42px;height:42px;border-radius:10px;border:1px solid var(--bd-2);background:var(--surface);color:var(--text-2);display:grid;place-items:center;font-size:19px"><i class="ri-graduation-cap-line"></i></a>
+          <a class="ilink" href="https://orcid.org/0009-0008-4547-5639" target="_blank" rel="noopener" title="ORCID" style="width:42px;height:42px;border-radius:10px;border:1px solid var(--bd-2);background:var(--surface);color:var(--text-2);display:grid;place-items:center;font-size:16px;font-weight:700">iD</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- STATS -->
+    <div style="max-width:760px;margin:0 auto;padding:0 24px">
+      <div class="reveal stats-row" style="display:flex;justify-content:center;gap:0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:26px 0">
+        <div style="flex:1;text-align:center;border-right:1px solid var(--bd)"><div style="font-family:var(--font-display);font-size:38px;color:var(--brand-yellow-hover)">3</div><div style="font-weight:600;font-size:12px;color:var(--text-4);letter-spacing:.03em">IEEE PAPERS</div></div>
+        <div style="flex:1;text-align:center;border-right:1px solid var(--bd)"><div style="font-family:var(--font-display);font-size:38px;color:var(--brand-yellow-hover)">30+</div><div style="font-weight:600;font-size:12px;color:var(--text-4);letter-spacing:.03em">INSTRUCTORS</div></div>
+        <div style="flex:1;text-align:center;border-right:1px solid var(--bd)"><div style="font-family:var(--font-display);font-size:38px;color:var(--brand-yellow-hover)">2000+</div><div style="font-weight:600;font-size:12px;color:var(--text-4);letter-spacing:.03em">LEARNERS</div></div>
+        <div style="flex:1;text-align:center"><div style="font-family:var(--font-display);font-size:38px;color:var(--brand-yellow-hover)">8</div><div style="font-weight:600;font-size:12px;color:var(--text-4);letter-spacing:.03em">PROJECTS</div></div>
+      </div>
+    </div>
+
+    <div style="max-width:900px;margin:0 auto;padding:60px 24px 0;display:flex;flex-direction:column;gap:64px">
+
+      <!-- ABOUT -->
+      <section class="reveal" style="text-align:center">
+        <div class="eyebrow">WHO I AM</div>
+        <h2 class="h2d" style="margin:0 0 22px">ABOUT ME</h2>
+        <p style="font-weight:500;font-size:16px;line-height:1.75;color:var(--text-2);margin:0 auto;max-width:680px;text-align:left">I am a Computer Science and Engineering graduate from <strong style="color:var(--text)">Ahsanullah University of Science and Technology (AUST)</strong>, working at the intersection of software development, UI/UX design, and applied machine-learning research. My published work spans <strong style="color:var(--text)">sensor-efficient exercise monitoring</strong> and <strong style="color:var(--text)">machine learning + IoT for sustainable agriculture</strong>, with an undergraduate thesis on <strong style="color:var(--text)">neural-network approaches for gene&ndash;disease association mining</strong>.</p>
+        <p style="font-weight:500;font-size:16px;line-height:1.75;color:var(--text-2);margin:18px auto 0;max-width:680px;text-align:left">Currently I work as an <strong style="color:var(--text)">Operational Executive at Ostad Limited</strong>, coordinating 30+ instructors and supporting 2000+ learners. My broader interests span IoT, Machine Learning, Deep Learning, LLMs, Computer Vision, and NLP &mdash; and I'm actively seeking <strong style="color:var(--text)">research and postgraduate (MS/PhD) opportunities</strong>.</p>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="reveal" style="text-align:center">
+        <div class="eyebrow">TOOLKIT</div>
+        <h2 class="h2d" style="margin:0 0 30px">SKILLS &amp; INTERESTS</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;max-width:720px;margin:0 auto" id="skillWrap"></div>
+      </section>
+
+      <!-- EDUCATION + EXPERIENCE -->
+      <section class="reveal">
+        <div style="text-align:center;margin-bottom:30px">
+          <div class="eyebrow">THE PATH</div>
+          <h2 class="h2d" style="margin:0">EDUCATION &amp; EXPERIENCE</h2>
+        </div>
+        <div class="edu-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:26px">
+          <div style="background:var(--surface);border:1px solid var(--bd);border-radius:16px;box-shadow:var(--shadow);padding:28px">
+            <h3 style="font-weight:700;font-size:15px;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase;margin:0 0 20px">Education</h3>
+            <div style="display:flex;flex-direction:column;gap:20px">
+              <div style="display:flex;gap:13px"><span style="flex:none;width:38px;height:38px;border-radius:9px;background:var(--surface-3);display:grid;place-items:center;color:var(--brand-yellow-hover);font-size:19px"><i class="ri-building-2-line"></i></span><div><div style="font-weight:700;font-size:14.5px;color:var(--text)">Ahsanullah University of Science &amp; Technology</div><div style="font-weight:500;font-size:13px;color:var(--text-3)">B.Sc. in Computer Science &amp; Engineering</div><div style="font-weight:500;font-size:12px;color:var(--text-4)">2020 &ndash; 2024</div></div></div>
+              <div style="display:flex;gap:13px"><span style="flex:none;width:38px;height:38px;border-radius:9px;background:var(--surface-3);display:grid;place-items:center;color:var(--brand-yellow-hover);font-size:19px"><i class="ri-school-line"></i></span><div><div style="font-weight:700;font-size:14.5px;color:var(--text)">Police Lines School &amp; College, Rangpur</div><div style="font-weight:500;font-size:13px;color:var(--text-3)">HSC &middot; GPA 5.00/5.00</div><div style="font-weight:500;font-size:12px;color:var(--text-4)">2016 &ndash; 2018</div></div></div>
+              <div style="display:flex;gap:13px"><span style="flex:none;width:38px;height:38px;border-radius:9px;background:var(--surface-3);display:grid;place-items:center;color:var(--brand-yellow-hover);font-size:19px"><i class="ri-school-line"></i></span><div><div style="font-weight:700;font-size:14.5px;color:var(--text)">Police Lines School &amp; College, Rangpur</div><div style="font-weight:500;font-size:13px;color:var(--text-3)">SSC &middot; GPA 5.00/5.00</div><div style="font-weight:500;font-size:12px;color:var(--text-4)">2014 &ndash; 2016</div></div></div>
+            </div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--bd);border-radius:16px;box-shadow:var(--shadow);padding:28px">
+            <h3 style="font-weight:700;font-size:15px;color:var(--text-4);letter-spacing:.06em;text-transform:uppercase;margin:0 0 20px">Experience</h3>
+            <div style="display:flex;flex-direction:column;gap:17px">
+              <div style="display:flex;gap:13px"><span style="flex:none;width:38px;height:38px;border-radius:9px;background:var(--brand-yellow);display:grid;place-items:center;color:#101828;font-weight:700;font-size:15px">O</span><div style="flex:1"><div style="display:flex;justify-content:space-between;gap:8px"><span style="font-weight:700;font-size:14.5px;color:var(--text)">Ostad Limited, Dhaka</span><span style="font-weight:600;font-size:11.5px;color:var(--text-4);font-style:italic;white-space:nowrap">2025 &ndash; Present</span></div><div style="font-weight:500;font-size:13px;color:var(--text-3)">Operational Executive</div></div></div>
+              <div style="display:flex;gap:13px"><span style="flex:none;width:38px;height:38px;border-radius:9px;background:#0B68D6;display:grid;place-items:center;color:#fff;font-weight:700;font-size:12px">IS</span><div style="flex:1"><div style="display:flex;justify-content:space-between;gap:8px"><span style="font-weight:700;font-size:14.5px;color:var(--text)">Intelsense AI, Remote</span><span style="font-weight:600;font-size:11.5px;color:var(--text-4);font-style:italic;white-space:nowrap">2023 &ndash; 2024</span></div><div style="font-weight:500;font-size:13px;color:var(--text-3)">UI/UX Designer</div></div></div>
+              <div style="display:flex;gap:13px"><span style="flex:none;width:38px;height:38px;border-radius:9px;background:#0B68D6;display:grid;place-items:center;color:#fff;font-weight:700;font-size:12px">GP</span><div style="flex:1"><div style="display:flex;justify-content:space-between;gap:8px"><span style="font-weight:700;font-size:14.5px;color:var(--text)">Grameenphone App City</span><span style="font-weight:600;font-size:11.5px;color:var(--text-4);font-style:italic;white-space:nowrap">2022 &ndash; 2023</span></div><div style="font-weight:500;font-size:13px;color:var(--text-3)">App Developer</div></div></div>
+              <div style="display:flex;gap:13px"><span style="flex:none;width:38px;height:38px;border-radius:9px;background:var(--surface-3);display:grid;place-items:center;color:var(--brand-yellow-hover);font-size:18px"><i class="ri-team-line"></i></span><div style="flex:1"><div style="display:flex;justify-content:space-between;gap:8px"><span style="font-weight:700;font-size:14.5px;color:var(--text)">AUST Research &amp; Publication Club</span><span style="font-weight:600;font-size:11.5px;color:var(--text-4);font-style:italic;white-space:nowrap">2022 &ndash; 2024</span></div><div style="font-weight:500;font-size:13px;color:var(--text-3)">Joint Secretary</div></div></div>
+              <div style="display:flex;gap:13px"><span style="flex:none;width:38px;height:38px;border-radius:9px;background:var(--surface-3);display:grid;place-items:center;color:var(--brand-yellow-hover);font-size:18px"><i class="ri-code-box-line"></i></span><div style="flex:1"><div style="display:flex;justify-content:space-between;gap:8px"><span style="font-weight:700;font-size:14.5px;color:var(--text)">AUST Programming &amp; Informatics Club</span><span style="font-weight:600;font-size:11.5px;color:var(--text-4);font-style:italic;white-space:nowrap">2022 &ndash; 2024</span></div><div style="font-weight:500;font-size:13px;color:var(--text-3)">Member</div></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HONORS -->
+      <section class="reveal" style="text-align:center">
+        <div class="eyebrow">RECOGNITION</div>
+        <h2 class="h2d" style="margin:0 0 24px">HONORS &amp; AWARDS</h2>
+        <div style="max-width:760px;margin:0 auto;text-align:left" id="honorsWrap"></div>
+      </section>
+
+      <!-- FEATURED PUBLICATIONS -->
+      <section class="reveal" style="text-align:center">
+        <div class="eyebrow">PEER-REVIEWED</div>
+        <h2 class="h2d" style="margin:0 0 26px">SELECTED PUBLICATIONS</h2>
+        <div style="display:flex;flex-direction:column;gap:20px;text-align:left" id="homePubs"></div>
+        <button class="gotoPubs" style="margin-top:26px;display:inline-flex;align-items:center;gap:7px;background:var(--surface-2);border:1px solid var(--brand-yellow-200);color:var(--brand-yellow-hover);font-weight:700;font-size:14px;padding:11px 20px;border-radius:999px;cursor:pointer">Browse all publications <i class="ri-arrow-right-line"></i></button>
+      </section>
+    </div>
+  </div>
+
+  <!-- ===== PUBLICATIONS ===== -->
+  <div class="page" id="page-publications">
+    <div style="max-width:900px;margin:0 auto;padding:56px 24px;text-align:center">
+      <div class="eyebrow">PEER-REVIEWED · IEEE</div>
+      <h1 style="font-family:var(--font-display);font-size:54px;color:var(--text);margin:0 0 8px;letter-spacing:.5px">PUBLICATIONS</h1>
+      <p style="font-weight:500;font-size:15px;color:var(--text-3);margin:0 0 28px">Work in machine learning, IoT, and bioinformatics.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:30px;align-items:center">
+        <div style="display:flex;flex-wrap:wrap;gap:9px;justify-content:center" id="pubTagChips"></div>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;justify-content:center" id="pubYearChips"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;text-align:left" id="pubList"></div>
+    </div>
+  </div>
+
+  <!-- ===== SHOWCASE ===== -->
+  <div class="page" id="page-showcase">
+    <div style="max-width:960px;margin:0 auto;padding:56px 24px;text-align:center">
+      <div class="eyebrow">BUILT THINGS</div>
+      <h1 style="font-family:var(--font-display);font-size:54px;color:var(--text);margin:0 0 8px;letter-spacing:.5px">PROJECTS</h1>
+      <p style="font-weight:500;font-size:15px;color:var(--text-3);margin:0 0 28px">Software, hardware, games, and 3D graphics.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:30px;align-items:center">
+        <div style="display:flex;flex-wrap:wrap;gap:9px;justify-content:center" id="projCatChips"></div>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;justify-content:center" id="projYearChips"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;text-align:left" id="projGrid"></div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="margin-top:70px;border-top:1px solid var(--bd);background:var(--surface-2)">
+    <div style="max-width:900px;margin:0 auto;padding:46px 24px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center">
+      <div style="font-family:var(--font-display);font-size:30px;color:var(--text);letter-spacing:.4px">LET'S CONNECT</div>
+      <div style="font-weight:500;font-size:14px;color:var(--text-3)">sowpnilroy44<span style="color:var(--text-4)">(at)</span>gmail.com · Dhaka, Bangladesh</div>
+      <div style="display:flex;gap:10px;margin-top:4px">
+        <a class="ilink" href="mailto:sowpnilroy44@gmail.com" title="Email" style="width:44px;height:44px;border-radius:11px;border:1px solid var(--bd-2);background:var(--surface);color:var(--text-2);display:grid;place-items:center;font-size:20px"><i class="ri-mail-line"></i></a>
+        <a class="ilink" href="https://github.com/Sowpnil-Roy" target="_blank" rel="noopener" title="GitHub" style="width:44px;height:44px;border-radius:11px;border:1px solid var(--bd-2);background:var(--surface);color:var(--text-2);display:grid;place-items:center;font-size:20px"><i class="ri-github-fill"></i></a>
+        <a class="ilink" href="https://www.linkedin.com/in/sowpnil--roy/" target="_blank" rel="noopener" title="LinkedIn" style="width:44px;height:44px;border-radius:11px;border:1px solid var(--bd-2);background:var(--surface);color:var(--text-2);display:grid;place-items:center;font-size:20px"><i class="ri-linkedin-box-fill"></i></a>
+        <a class="ilink" href="https://ieeexplore.ieee.org/author/181666130628577" target="_blank" rel="noopener" title="IEEE Xplore Author Profile" style="width:44px;height:44px;border-radius:11px;border:1px solid var(--bd-2);background:var(--surface);color:var(--text-2);display:grid;place-items:center;font-size:20px"><i class="ri-graduation-cap-line"></i></a>
+        <a class="ilink" href="https://orcid.org/0009-0008-4547-5639" target="_blank" rel="noopener" title="ORCID" style="width:44px;height:44px;border-radius:11px;border:1px solid var(--bd-2);background:var(--surface);color:var(--text-2);display:grid;place-items:center;font-size:16px;font-weight:700">iD</a>
+      </div>
+      <div style="font-weight:500;font-size:12px;color:var(--text-4);margin-top:6px">&copy; <span id="yr"></span> Sowpnil Roy</div>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var PUBS = [
+    { title:"Neural Network Approach in Gene-Disease Association Mining",
+      authorsPre:"", meName:"Sowpnil Roy", authorsPost:"; Hridita Barua; Sonya Rahman Sarani; Jannatul Maowa Ahona; Dr. S.M.A. Al-Mamun",
+      venue:"IEEE (QPAIN)", year:2026,
+      tldr:"We apply neural-network models to mine associations between genes and diseases, exploring deep learning as a tool for uncovering biologically meaningful gene\u2013disease links (undergraduate thesis).",
+      tags:["Neural Networks","Deep Learning","Gene-Disease Association","Bioinformatics","Thesis"],
+      links:[{label:"IEEE",href:"https://doi.org/10.1109/QPAIN69676.2026.11545648"}],
+      accent:"#9747FF", icon:"ri-share-line", label:"Neural Nets for Gene-Disease Mining" },
+    { title:"Efficient Exercise Monitoring with Reduced Sensor Usage: A Machine Learning Approach",
+      authorsPre:"", meName:"Sowpnil Roy", authorsPost:"; Tahsin Islam Turag; Foysal Hossain; Khaled Hasan",
+      venue:"IEEE (QPAIN)", year:2025,
+      tldr:"We show that machine learning can monitor physical exercise accurately while using fewer sensors, reducing hardware cost and complexity without sacrificing recognition performance.",
+      tags:["Machine Learning","Exercise Monitoring","Sensor Efficiency","Human Activity Recognition","IoT"],
+      links:[{label:"IEEE",href:"https://doi.org/10.1109/QPAIN66474.2025.11171701"}],
+      accent:"#0B68D6", icon:"ri-pulse-line", label:"Sensor-Efficient Exercise Monitoring" },
+    { title:"Smart Agriculture Systems: A Machine Learning and IoT Approach to Sustainable Farming",
+      authorsPre:"Foysal Hossain; ", meName:"Sowpnil Roy", authorsPost:"; Md. Reasad Zaman Chowdhury; Mahbub Roujen; Md Rasel Ahmed; Mohammad Marufur Rahman",
+      venue:"IEEE (ECCE)", year:2025,
+      tldr:"We combine machine learning with IoT sensing to build a smart-agriculture system that supports data-driven, sustainable farming decisions and improved resource management.",
+      tags:["Machine Learning","IoT","Smart Agriculture","Sustainable Farming","Precision Agriculture"],
+      links:[{label:"IEEE",href:"https://doi.org/10.1109/ECCE64574.2025.11012945"}],
+      accent:"#32D583", icon:"ri-plant-line", label:"ML + IoT for Sustainable Farming" }
+  ];
+
+  var PROJECTS = [
+    { title:"A Medieval Castle", year:2024, cat:"3D / Graphics", icon:"ri-ancient-gate-line", tech:"Three.js, WebGL Shaders, JavaScript, HTML/CSS", desc:"An interactive 3D medieval castle built for defense, residence, and to showcase noble power \u2014 rendered in the browser with WebGL shaders and keyboard/mouse controls.", repo:"https://github.com/Sowpnil-Roy/A_Medieval_Castle_Computer-Graphics_Lab_CSE-4204" },
+    { title:"Personal Portfolio Website", year:2024, cat:"Web", icon:"ri-global-line", tech:"HTML, CSS, JavaScript", desc:"A responsive personal portfolio website showcasing projects, skills, and experience.", repo:"https://github.com/Sowpnil-Roy/roy" },
+    { title:"AI Sudoku (Python-Based Game)", year:2023, cat:"AI / ML", icon:"ri-grid-line", tech:"Python, Google Colab", desc:"A Sudoku game where players fill a grid with numbers, with logic ensuring no repetition across rows and columns.", repo:"https://github.com/Sowpnil-Roy/Ai-Sudoku_Game_in-COLAB_3.2" },
+    { title:"Bachelors Home Management System", year:2023, cat:"Web", icon:"ri-home-gear-line", tech:"ASP.NET, JavaScript, HTML, CSS", desc:"A management system that handles tenant records, rent tracking, and facility management for shared bachelor accommodation.", repo:"https://github.com/Sowpnil-Roy/Bachelors-Home--Asp.Net-MVC-Project-CSE-3200-Software-Development-V" },
+    { title:"Quiz Application System", year:2023, cat:"Mobile", icon:"ri-question-answer-line", tech:"Android Studio, Java, Firebase", desc:"An Android quiz application supporting quiz creation, question randomization, scoring, and performance tracking.", repo:"https://github.com/Sowpnil-Roy/Quiz-Application-Android-Studio-ISD-Project-3.2" },
+    { title:"Smart Car Parking System (Hardware)", year:2022, cat:"Hardware", icon:"ri-parking-box-line", tech:"Arduino IDE, Microprocessor", desc:"A vehicle safety system with collision detection and an anti-sleeping buzzer to alert drivers.", repo:"https://github.com/Sowpnil-Roy/Smart-Car-Parking-Microprocessor-Project-AUST-3.1" },
+    { title:"Banking Management System (Software)", year:2021, cat:"Systems", icon:"ri-bank-line", tech:"Java, MsSQL, NetBeans 8.2, SQL Server 2014", desc:"A banking management system that automates operations, accounts, transactions, loans, and customer services.", repo:"https://github.com/Sowpnil-Roy/Banking-Management-System-Java-Project-Sowpnil-Roy-" },
+    { title:"Car Mania (Game)", year:2020, cat:"Games", icon:"ri-gamepad-line", tech:"C++, iGraphics", desc:"A multilevel arcade-style game built with C++ and the iGraphics library.", repo:"https://github.com/Sowpnil-Roy/Car-Mania-Igraphics-Gaming-Project" }
+  ];
+
+  var HONORS = [
+    { title:"Winner, Grameenphone Academy Quiz Competition (GP Academy & Cisco Networking Academy)", year:"2022" },
+    { title:"RUET Graphic Designer Competition, Rajshahi University of Engineering & Technology", year:"2022" },
+    { title:"UI/UX Contest, IUT National ICT Fest", year:"2020" },
+    { title:"Board Scholarship in Higher Secondary Certificate, Dinajpur Education Board", year:"2018" },
+    { title:"Mercantile Bank Abdul Jalil Education Scholarship (HSC)", year:"2018" },
+    { title:"Volunteer, Bangladesh Red Crescent Society (BDRCS)", year:"2016" }
+  ];
+
+  // Skills: [label, emphasis] emphasis: 2=solid yellow, 1=outline yellow, 0=plain
+  var SKILLS = [
+    ["Machine Learning",2],["IoT",2],["Deep Learning",1],["LLMs",2],["Computer Vision",1],["NLP",1],["Bioinformatics",1],
+    ["Python",0],["Java",0],["C++",0],["C#",0],["JavaScript",0],["HTML / CSS",0],["ASP.NET",0],["Android (Java)",0],
+    ["Firebase",0],["Three.js / WebGL",0],["Arduino",0],["iGraphics",0],["Figma",0],["UI/UX",0],["Google Colab",0],
+    ["NetBeans",0],["SQL Server",0]
+  ];
+
+  var esc = function(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); };
+  var el = function(id){ return document.getElementById(id); };
+
+  // ----- render skills -----
+  (function(){
+    var h = "";
+    for (var i=0;i<SKILLS.length;i++){
+      var s = SKILLS[i][0], e = SKILLS[i][1];
+      var sizes = [ [13,"6px 13px"], [16,"8px 15px"], [18,"9px 17px"] ];
+      var fs = sizes[e][0], pad = sizes[e][1];
+      var style;
+      if (e===2) style = "background:var(--brand-yellow);color:#101828;font-weight:700;font-size:"+fs+"px;padding:"+pad+";border-radius:999px";
+      else if (e===1) style = "background:var(--surface-2);border:1px solid var(--brand-yellow);color:var(--text);font-weight:700;font-size:"+fs+"px;padding:"+pad+";border-radius:999px";
+      else style = "background:var(--surface);border:1px solid var(--bd-2);color:var(--text-2);font-weight:600;font-size:"+fs+"px;padding:"+pad+";border-radius:999px";
+      h += '<span style="'+style+'">'+esc(s)+'</span>';
+    }
+    el("skillWrap").innerHTML = h;
+  })();
+
+  // ----- render honors -----
+  (function(){
+    var h = "";
+    for (var i=0;i<HONORS.length;i++){
+      h += '<div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--bd)">'
+        + '<div style="display:flex;gap:12px;align-items:flex-start"><i class="ri-award-line" style="color:var(--brand-yellow-hover);font-size:18px;margin-top:1px"></i>'
+        + '<span style="font-weight:500;font-size:14.5px;color:var(--text-2)">'+esc(HONORS[i].title)+'</span></div>'
+        + '<span style="font-weight:700;font-size:13px;color:var(--text-4);font-style:italic;white-space:nowrap">'+esc(HONORS[i].year)+'</span></div>';
+    }
+    el("honorsWrap").innerHTML = h;
+  })();
+
+  // ----- publication card -----
+  function pubCard(p, big){
+    var cols = big ? "140px 1fr" : "130px 1fr";
+    var tileIcon = big ? 34 : 32;
+    var tile = 'border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:14px;min-height:120px;color:#fff;background:linear-gradient(150deg,'+p.accent+','+p.accent+'cc)';
+    var tags = "";
+    for (var i=0;i<p.tags.length;i++){ tags += '<span style="background:var(--surface-3);color:var(--text-2);font-weight:600;font-size:12px;padding:4px 10px;border-radius:6px">#'+esc(p.tags[i])+'</span>'; }
+    var links = "";
+    for (var j=0;j<p.links.length;j++){ links += '<a href="'+p.links[j].href+'" target="_blank" rel="noopener" style="font-weight:700;font-size:13px;color:var(--brand-yellow-hover)">['+esc(p.links[j].label)+']</a>'; }
+    return '<div class="pub-card pcard" style="background:var(--surface);border:1px solid var(--bd);border-radius:16px;box-shadow:var(--shadow);padding:'+(big?26:24)+'px;display:grid;grid-template-columns:'+cols+';gap:'+(big?24:22)+'px">'
+      + '<div class="pub-tile" style="'+tile+'"><i class="'+p.icon+'" style="font-size:'+tileIcon+'px"></i><span style="font-family:var(--font-ui);font-weight:600;font-size:10.5px;text-align:center;line-height:1.3;opacity:.95">'+esc(p.label)+'</span></div>'
+      + '<div><h3 style="font-weight:700;font-size:'+(big?19:18)+'px;line-height:1.25;color:var(--text);margin:0 0 8px">'+esc(p.title)+'</h3>'
+      + '<div style="font-weight:500;font-size:13.5px;color:var(--text-3);margin-bottom:6px">'+esc(p.authorsPre)+'<strong style="color:var(--text)">'+esc(p.meName)+'</strong>'+esc(p.authorsPost)+'</div>'
+      + '<div style="font-size:13.5px;color:var(--text-2);margin-bottom:12px"><em>'+esc(p.venue)+'</em> <span style="font-weight:600">'+esc(p.year)+'</span></div>'
+      + '<p style="font-weight:500;font-size:14px;line-height:1.55;color:var(--text-3);margin:0 0 14px"><span style="font-weight:700;color:var(--text-2)">TL;DR:</span> '+esc(p.tldr)+'</p>'
+      + '<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px">'+tags+'</div>'
+      + '<div style="display:flex;gap:14px">'+links+'</div></div></div>';
+  }
+
+  // ----- project card -----
+  function projCard(pj){
+    return '<div class="pcard reveal" style="position:relative;background:var(--surface);border:1px solid var(--bd);border-radius:16px;box-shadow:var(--shadow);padding:24px;display:flex;flex-direction:column;gap:10px">'
+      + '<span style="position:absolute;top:18px;right:18px;font-family:var(--font-ui);font-weight:600;font-size:11px;color:var(--text-4);background:var(--surface-3);padding:3px 9px;border-radius:6px">'+esc(pj.year)+'</span>'
+      + '<div style="display:flex;align-items:center;gap:10px;padding-right:52px"><span style="width:36px;height:36px;flex:none;border-radius:9px;background:var(--surface-2);border:1px solid var(--brand-yellow-200);display:grid;place-items:center;color:var(--brand-yellow-hover);font-size:18px"><i class="'+pj.icon+'"></i></span><h3 style="font-weight:700;font-size:16px;color:var(--text);margin:0;line-height:1.2">'+esc(pj.title)+'</h3></div>'
+      + '<div style="font-style:italic;font-weight:500;font-size:12.5px;color:var(--text-4)">'+esc(pj.tech)+'</div>'
+      + '<p style="font-weight:500;font-size:13.5px;line-height:1.55;color:var(--text-3);margin:0;flex:1">'+esc(pj.desc)+'</p>'
+      + '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px">'
+      + '<span style="background:var(--surface-3);color:var(--text-2);font-weight:600;font-size:11px;padding:4px 10px;border-radius:6px">'+esc(pj.cat)+'</span>'
+      + '<a href="'+pj.repo+'" target="_blank" rel="noopener" class="ilink" style="display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:13px;color:var(--brand-yellow-hover)"><i class="ri-github-fill"></i> GitHub</a></div></div>';
+  }
+
+  // ----- home featured pubs (all, no filter) -----
+  (function(){
+    var h=""; for (var i=0;i<PUBS.length;i++){ h+=pubCard(PUBS[i],false); } el("homePubs").innerHTML=h;
+  })();
+
+  // ----- filter state -----
+  var state = { pubTag:"All", pubYear:"All", projCat:"All", projYear:"All" };
+
+  function uniq(arr){ var o=[],seen={}; for (var i=0;i<arr.length;i++){ if(!seen[arr[i]]){seen[arr[i]]=1;o.push(arr[i]);} } return o; }
+
+  function chipRow(containerId, values, key){
+    var h="";
+    for (var i=0;i<values.length;i++){
+      var v=values[i], active = (state[key]===v);
+      h += '<button class="chip'+(active?" active":"")+'" data-key="'+key+'" data-val="'+esc(v)+'">'+esc(v)+'</button>';
+    }
+    el(containerId).innerHTML = h;
+  }
+
+  function renderPubs(){
+    var list = PUBS.filter(function(p){
+      return (state.pubTag==="All" || p.tags.indexOf(state.pubTag)>-1) &&
+             (state.pubYear==="All" || String(p.year)===state.pubYear);
+    });
+    var h=""; for (var i=0;i<list.length;i++){ h+=pubCard(list[i],true); }
+    el("pubList").innerHTML = h || '<div style="text-align:center;color:var(--text-4);padding:30px">No publications match this filter.</div>';
+  }
+  function renderProjects(){
+    var list = PROJECTS.filter(function(p){
+      return (state.projCat==="All" || p.cat===state.projCat) &&
+             (state.projYear==="All" || String(p.year)===state.projYear);
+    });
+    var h=""; for (var i=0;i<list.length;i++){ h+=projCard(list[i]); }
+    el("projGrid").innerHTML = h || '<div style="text-align:center;color:var(--text-4);padding:30px;grid-column:1/-1">No projects match this filter.</div>';
+    observeReveals();
+  }
+
+  // build chips
+  var pubTags = ["All"]; PUBS.forEach(function(p){ p.tags.forEach(function(t){ if(pubTags.indexOf(t)<0)pubTags.push(t); }); });
+  var pubYears = ["All"].concat(uniq(PUBS.map(function(p){return String(p.year);})).sort().reverse());
+  var projCats = ["All"].concat(uniq(PROJECTS.map(function(p){return p.cat;})));
+  var projYears = ["All"].concat(uniq(PROJECTS.map(function(p){return String(p.year);})).sort().reverse());
+
+  function rebuildChips(){
+    chipRow("pubTagChips", pubTags, "pubTag");
+    chipRow("pubYearChips", pubYears, "pubYear");
+    chipRow("projCatChips", projCats, "projCat");
+    chipRow("projYearChips", projYears, "projYear");
+  }
+  rebuildChips();
+  renderPubs();
+  renderProjects();
+
+  // chip click (event delegation)
+  document.addEventListener("click", function(e){
+    var b = e.target.closest ? e.target.closest(".chip") : null;
+    if (!b) return;
+    var key = b.getAttribute("data-key"), val = b.getAttribute("data-val");
+    state[key] = val;
+    rebuildChips();
+    if (key.indexOf("pub")===0) renderPubs(); else renderProjects();
+  });
+
+  // ----- page nav -----
+  function go(page){
+    var pages = document.querySelectorAll(".page");
+    for (var i=0;i<pages.length;i++){ pages[i].classList.remove("active"); }
+    el("page-"+page).classList.add("active");
+    var btns = document.querySelectorAll(".navbtn");
+    for (var j=0;j<btns.length;j++){ btns[j].classList.toggle("active", btns[j].getAttribute("data-page")===page); }
+    window.scrollTo({top:0,behavior:"auto"});
+    observeReveals();
+  }
+  var nb = document.querySelectorAll(".navbtn");
+  for (var n=0;n<nb.length;n++){ nb[n].addEventListener("click", function(){ go(this.getAttribute("data-page")); }); }
+  var gp = document.querySelectorAll(".gotoPubs");
+  for (var g=0;g<gp.length;g++){ gp[g].addEventListener("click", function(){ go("publications"); }); }
+
+  // ----- theme toggle (persisted) -----
+  var site = el("site"), tbtn = el("themeToggle");
+  function setTheme(t){
+    site.setAttribute("data-theme", t);
+    document.body.style.background = (t==="dark") ? "#14120B" : "#ffffff";
+    tbtn.innerHTML = (t==="dark") ? '<i class="ri-sun-line"></i>' : '<i class="ri-moon-line"></i>';
+    try { localStorage.setItem("sr_theme", t); } catch(e){}
+  }
+  var saved = "light";
+  try { saved = localStorage.getItem("sr_theme") || "light"; } catch(e){}
+  setTheme(saved==="dark" ? "dark" : "light");
+  tbtn.addEventListener("click", function(){
+    setTheme(site.getAttribute("data-theme")==="dark" ? "light" : "dark");
+  });
+
+  // ----- reveal on scroll -----
+  var io = ("IntersectionObserver" in window) ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("is-in"); io.unobserve(e.target); } });
+  }, { threshold:0.06, rootMargin:"0px 0px -30px 0px" }) : null;
+
+  function observeReveals(){
+    requestAnimationFrame(function(){
+      var els = document.querySelectorAll(".reveal:not(.is-in)");
+      if (!io){ for (var i=0;i<els.length;i++) els[i].classList.add("is-in"); return; }
+      for (var j=0;j<els.length;j++) io.observe(els[j]);
+    });
+    setTimeout(function(){
+      var els = document.querySelectorAll(".reveal:not(.is-in)");
+      for (var i=0;i<els.length;i++) els[i].classList.add("is-in");
+    }, 1600);
+  }
+  observeReveals();
+
+  el("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
